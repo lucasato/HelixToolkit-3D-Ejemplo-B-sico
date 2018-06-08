@@ -1,0 +1,19 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:HelixToolkit="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
+        Title="MainWindow" Height="546" Width="721">
+    <Grid Name="overall_grid">
+        <!-- Manage rotation-->
+        <Slider Value="{Binding TeaPotPositionX}" Maximum="90" Minimum="-90" Height="29" VerticalAlignment="Top" Margin="0,90,0,0" />
+        
+        <!-- HelixViewport -->
+        <HelixToolkit:HelixViewport3D ZoomExtentsWhenLoaded="True" Margin="0,124,0,0" Name="m_helix_viewport">
+            <!-- Remember to add light to the scene -->
+            <HelixToolkit:SunLight/>
+            <!-- Bind -->
+            <ModelVisual3D Content="{Binding model}"/>
+        </HelixToolkit:HelixViewport3D>
+    </Grid>
+</Window>
